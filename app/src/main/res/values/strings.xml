@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Virtual Police Station</string>
+    <string name="pcop">PCOP</string>
+    <string name="welcome">WELCOME</string>
+    <string name="we_are_happy_to_help_you">WE ARE HAPPY TO HELP YOU !</string>
+    <string name="please_select_the_service">PLEASE SELECT THE SERVICE.</string>
+    <string name="chaklo_revolver">CHAKLO REVOLVER!</string>
+    <string name="services">Services</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="mpcop">MPCOP</string>
+    <string name="registration">REGISTRATION</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="select_gender">SELECT GENDER :</string>
+    <string name="enter_10_digit_mobile_no">ENTER 10 Digit MOBILE NO.</string>
+    <string name="MobileN">Mobile NO.</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">PASSWORD</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="log_in">LOG IN</string>
+    <string name="or">OR</string>
+    <string name="register">REGISTER</string>
+    <string name="get_otp">GET OTP</string>
+</resources>

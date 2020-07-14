@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "748630077211",
+    "firebase_url": "https://virtual-police-station-45286.firebaseio.com",
+    "project_id": "virtual-police-station-45286",
+    "storage_bucket": "virtual-police-station-45286.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:748630077211:android:c55f9eccdb698981b9adbe",
+        "android_client_info": {
+          "package_name": "com.example.virtualpolicestation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "748630077211-3b0dk1lshts0q8se81rfno6bhpk34f3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.virtualpolicestation",
+            "certificate_hash": "2543aa38c1c428d003f0f2836ed49ede25fffbab"
+          }
+        },
+        {
+          "client_id": "748630077211-cvk96a16j37qp2d95vbv3adupkgcqf1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSUv-Ibo8eKadY4KpdSumGCcqN9VFWctY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "748630077211-cvk96a16j37qp2d95vbv3adupkgcqf1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
