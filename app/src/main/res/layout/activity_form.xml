@@ -12,15 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textAlignment="center"
         android:text="@string/registration"
         android:textSize="30sp"
         android:textColor="#000000"/>
     <EditText
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:hint="@string/full_name"
         android:id="@+id/Fullname"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20sp"
         />
@@ -28,8 +30,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_gravity="start"
         android:text="@string/select_gender"
+
         android:textColor="#000000"
         android:textSize="20sp"
         />
@@ -45,13 +49,16 @@
         android:layout_height="45dp"
         android:hint="@string/enter_10_digit_mobile_no"
         android:id="@+id/mobileNo"
+        android:textAlignment="center"
         android:inputType="phone"
         android:textSize="20sp"
         android:autofillHints="@string/MobileN" />
 
     <EditText
         android:id="@+id/email"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -60,10 +67,12 @@
 
     <EditText
         android:id="@+id/password1"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
+        android:textAlignment="center"
         android:hint="@string/password"
         android:textSize="20sp"/>
 
@@ -72,18 +81,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_marginTop="20dp"
         android:inputType="textPassword"
         android:hint="@string/confirm_password"
+        android:textAlignment="center"
         android:textSize="20sp"
         />
 
     <Button
         android:id="@+id/regster1"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:text="Register"
+        android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
-        android:background="#192965"/>
+        android:background="@drawable/button"/>
 
 
 </LinearLayout>
