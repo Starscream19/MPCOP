@@ -30,8 +30,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -43,6 +47,9 @@ public class FormActivity extends AppCompatActivity {
     ProgressBar progressBar;
     private FirebaseFirestore fStore;
     String userID;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
