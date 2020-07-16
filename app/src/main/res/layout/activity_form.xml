@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".FormActivity">
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +18,7 @@
         android:text="@string/registration"
         android:textSize="30sp"
         android:textColor="#000000"/>
+
     <EditText
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
@@ -27,32 +30,25 @@
         android:textSize="20sp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="start"
-        android:text="@string/select_gender"
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:text="@string/select_gender"-->
 
-        android:textColor="#000000"
-        android:textSize="20sp"
-        />
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
-    <EditText
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:hint="@string/enter_10_digit_mobile_no"
-        android:id="@+id/mobileNo"
-        android:textAlignment="center"
-        android:inputType="phone"
-        android:textSize="20sp"
-        android:autofillHints="@string/MobileN" />
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="20sp"-->
+<!--        />-->
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@android:drawable/btn_dropdown"-->
+<!--        android:spinnerMode="dropdown"/>-->
+
+
+
 
     <EditText
         android:id="@+id/email"
@@ -88,14 +84,38 @@
         android:textSize="20sp"
         />
 
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="@string/enter_10_digit_mobile_no"
+        android:id="@+id/mobileNo"
+        android:textAlignment="center"
+        android:inputType="phone"
+        android:textSize="20sp"
+        android:autofillHints="@string/MobileN" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/codeEnter"
+        android:hint="Enter OTP"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        >
+
+    </EditText>
+
     <Button
-        android:id="@+id/regster1"
+        android:id="@+id/nextBtn"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="Register"
+        android:text="Verify"
         android:layout_marginTop="20dp"
         android:textColor="#FFFFFF"
         android:background="@drawable/button"/>
