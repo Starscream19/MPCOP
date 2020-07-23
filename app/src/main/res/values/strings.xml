@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Virtual Police Station</string>
+    <string name="pcop">PCOP</string>
+    <string name="welcome">WELCOME</string>
+    <string name="we_are_happy_to_help_you">WE ARE HAPPY TO HELP YOU !</string>
+    <string name="please_select_the_service">PLEASE SELECT THE SERVICE.</string>
+    <string name="chaklo_revolver">CHAKLO REVOLVER!</string>
+    <string name="services">Services</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="mpcop">MPCOP</string>
+    <string name="registration">REGISTRATION</string>
+    <string name="full_name">FULL NAME</string>
+    <string name="select_gender">SELECT GENDER :</string>
+    <string name="enter_10_digit_mobile_no">ENTER 10 Digit MOBILE NO.</string>
+    <string name="MobileN">Mobile NO.</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">PASSWORD</string>
+    <string name="confirm_password">CONFIRM PASSWORD</string>
+    <string name="log_in">LOG IN</string>
+    <string name="or">OR</string>
+    <string name="register">REGISTER</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="please_select_a_service">PLEASE SELECT A SERVICE:</string>
+    <string name="upload_your_signature">UPLOAD YOUR SIGNATURE</string>
+    <string name="stolen_recovered_vehicle">STOLEN/RECOVERED VEHICLE</string>
+    <string name="registration_number">REGISTRATION NUMBER:</string>
+    <string name="engine_number">ENGINE NUMBER:</string>
+    <string name="chassis_number">CHASSIS NUMBER:</string>
+    <string name="know_police_station">KNOW POLICE STATION:</string>
+    <string name="click_here"><a href="https://www.google.com/search?sxsrf=ALeKk03R2gX1vvf-Eg-huowCRRzWGADZ-Q:1595426520884&amp;q=madhya+pradesh+police+stations&amp;npsic=0&amp;rflfq=1&amp;rlha=0&amp;rllag=24680870,77369003,265938&amp;tbm=lcl&amp;ved=2ahUKEwiNiqv4guHqAhXG4XMBHVP_A-MQjGp6BAgLEDM&amp;rldoc=1#rlfi=hd:;si:;mv:[[25.90511754028021,81.72819241562499],[21.55163762069216,72.27995022812499],null,[23.746564969467876,77.00407132187499],7]">CLICK HERE !!!
+        </a>
+    </string>
+    <string name="lost_article_report">LOST ARTICLE REPORT</string>
+    <string name="complainant_s_name">Complainant\'s Name</string>
+    <string name="complainant_s_details">COMPLAINANT\'S DETAILS</string>
+    <string name="name">Name</string>
+    <string name="father_s_husband_s_guardian_s_name">Father\'s/Husband\'s/Guardian\'s Name</string>
+    <string name="guardian_s_name">Guardian\'s Name</string>
+    <string name="address">Address</string>
+    <string name="address">Address</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="email_idnew">Email Id</string>
+    <string name="description_address_of_place_of_loss">Description/Address of Place of Loss</string>
+    <string name="time">TIME</string>
+</resources>
