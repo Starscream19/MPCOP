@@ -29,8 +29,35 @@ public class HomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(),"You Selected" + services[+position],
                         Toast.LENGTH_SHORT).show();
-                Intent loginIntent = new Intent(HomeActivity.this, FIR.class);
-                startActivity(loginIntent);
+                Intent myIntent = null;
+                if(position == 0){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                if(position == 1){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                if(position ==2){
+                    myIntent = new Intent(view.getContext(), Lost_article.class);
+                }
+                if(position==3){
+                    myIntent = new Intent(view.getContext(), Know_police_station.class);
+                }
+                if(position==4){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                if(position==5){
+                    myIntent = new Intent(view.getContext(), Stolen_Recovered_vehicle.class);
+                }
+                if(position==6){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                if(position==7){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                if(position==8){
+                    myIntent = new Intent(view.getContext(), FIR.class);
+                }
+                startActivity(myIntent);
                 finish();
             }
         });
