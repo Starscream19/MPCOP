@@ -192,14 +192,12 @@ public class FIR extends AppCompatActivity {
                         user.put("Complaint", cipher);
 
 
-                        fStore.collection("F.I.R").add(user)
-                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        fStore.collection("F.I.R").document(userID).set(user)
+                                .addOnSuccessListener(new OnSuccessListener<Void> () {
                                     @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-
-
+                                    public void onSuccess(Void aVoid) {
                                         Log.d(TAG, "message has een encrypted  " + userID);
-                                        startActivity(new Intent(getApplicationContext(), success.class));
+                                        startActivity(new Intent(getApplicationContext(), signature.class));
 
                                     }
                         }).addOnFailureListener(new OnFailureListener() {
