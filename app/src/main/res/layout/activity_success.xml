@@ -24,10 +24,24 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/logut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="385dp"
+        android:background="@drawable/button"
+        android:layout_marginTop="50dp"
+        tools:ignore="InvalidId,MissingConstraints"
+        android:textColor="#FFFFFF"
+
+        android:layout_gravity="center_horizontal"
+        android:onClick="logout"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back To Home"
         tools:layout_editor_absoluteX="158dp"
         tools:layout_editor_absoluteY="385dp"
         android:background="@drawable/button"
@@ -36,7 +50,7 @@
         android:textColor="#FFFFFF"
 
         android:layout_gravity="center_horizontal"
-        android:onClick="logout"/>
+        />
 
 
 

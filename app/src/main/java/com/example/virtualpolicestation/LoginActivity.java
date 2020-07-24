@@ -1,9 +1,4 @@
-package com.example.virtualpolicestation.ui.login;
-
-import android.app.Activity;
-
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+package com.example.virtualpolicestation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,15 +21,10 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 
 
-import com.example.virtualpolicestation.FIR;
-import com.example.virtualpolicestation.FormActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-
-import com.example.virtualpolicestation.R;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -56,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), FIR.class));
+            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             finish();
         }
 
@@ -100,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),FIR.class));
+                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                         }else {
                             Toast.makeText(LoginActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
