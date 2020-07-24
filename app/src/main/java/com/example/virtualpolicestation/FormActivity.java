@@ -19,7 +19,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 
-import com.example.virtualpolicestation.ui.login.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -266,6 +265,8 @@ public class FormActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void Void) {
                                             Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
+
+                                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
@@ -274,12 +275,12 @@ public class FormActivity extends AppCompatActivity {
 
                                         }
                                     });
-                                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
 
                                 }else {
                                     FirebaseAuthException e = (FirebaseAuthException )task.getException();
                                     Log.e("LoginActivity", "Failed Registration", e);
-                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
 
                                 }
                             }
