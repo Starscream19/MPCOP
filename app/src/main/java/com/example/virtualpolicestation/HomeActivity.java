@@ -9,8 +9,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.example.virtualpolicestation.ui.login.LoginActivity;
-
 public class HomeActivity extends AppCompatActivity {
     GridView gridView;
     String[] services = {"Register E-FIR","View FIR","Report Lost Article","Know Police Station"
@@ -31,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(),"You Selected" + services[+position],
                         Toast.LENGTH_SHORT).show();
-                Intent loginIntent = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent loginIntent = new Intent(HomeActivity.this, FIR.class);
                 startActivity(loginIntent);
                 finish();
             }

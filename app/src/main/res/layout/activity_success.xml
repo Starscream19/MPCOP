@@ -9,31 +9,50 @@
     tools:context=".success">
 
 
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="366dp"
-        android:layout_height="95dp"
-        android:layout_gravity="center_horizontal"
-        android:text="Your F.I.R has been registered !!!"
+        android:layout_width="333dp"
+        android:layout_height="117dp"
+        android:text="Your F.I.R has been regitered"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="50dp"
         tools:ignore="MissingConstraints"
+        android:layout_gravity="center_horizontal"
         tools:layout_editor_absoluteX="39dp"
         tools:layout_editor_absoluteY="97dp" />
 
+
+    <Button
+        android:id="@+id/logut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="385dp"
+        android:background="@drawable/button"
+        android:layout_marginTop="50dp"
+        tools:ignore="InvalidId,MissingConstraints"
+        android:textColor="#FFFFFF"
+
+        android:layout_gravity="center_horizontal"
+        android:onClick="logout"/>
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/button"
-        android:onClick="logout"
-        android:text="Logout"
-        android:textColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
+        android:text="Back To Home"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="385dp" />
+        tools:layout_editor_absoluteY="385dp"
+        android:background="@drawable/button"
+        android:layout_marginTop="50dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="#FFFFFF"
+
+        android:layout_gravity="center_horizontal"
+        />
+
+
 
 
 </LinearLayout>
