@@ -17,7 +17,6 @@
         <activity android:name=".Lost_article"></activity>
         <activity android:name=".Know_police_station" />
         <activity android:name=".Stolen_Recovered_vehicle" />
-        <activity android:name=".Upload_ur_signature" />
         <activity android:name=".signature"></activity>
         <activity android:name=".success" />
         <activity android:name=".FIR" />
