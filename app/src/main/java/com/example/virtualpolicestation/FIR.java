@@ -69,7 +69,7 @@ public class FIR extends AppCompatActivity {
     SecretKey secretKey;
     byte[] secretKeyen;
     String strSecretKey;
-    byte[] IV = new byte[16];
+
     byte[] cipherComplaint,cipherName,cipherAddress,cipherCity,cipherSubject,cipherPostcode;
     SecureRandom random;
 
@@ -136,28 +136,27 @@ public class FIR extends AppCompatActivity {
                     strSecretKey = encoderfun(secretKeyen);
 
 
-                    random = new SecureRandom();
-                    random.nextBytes(IV);
+
                     try {
-                        cipherComplaint = Encrypt.encrypt(uComplaint.getText().toString().trim().getBytes(), secretKey, IV);
+                        cipherComplaint = Encrypt.encrypt(uComplaint.getText().toString().trim().getBytes(), secretKey);
 
                         String cipher = encoderfun(cipherComplaint);
-                        String tvIV = encoderfun(IV);
 
 
-                        cipherName = Encrypt.encrypt(uFullName.getText().toString().trim().getBytes(), secretKey,IV);
+
+                        cipherName = Encrypt.encrypt(uFullName.getText().toString().trim().getBytes(), secretKey);
 
                         String cipherNam = encoderfun(cipherName);
 
 
-                        cipherAddress = Encrypt.encrypt(uAddress.getText().toString().trim().getBytes(),secretKey ,IV);
+                        cipherAddress = Encrypt.encrypt(uAddress.getText().toString().trim().getBytes(),secretKey );
 
                         String cipherAdd = encoderfun(cipherAddress);
-                        cipherCity = Encrypt.encrypt(uCity.getText().toString().trim().getBytes(),secretKey,IV);
+                        cipherCity = Encrypt.encrypt(uCity.getText().toString().trim().getBytes(),secretKey);
                         String cipherCit = encoderfun(cipherCity);
-                        cipherSubject = Encrypt.encrypt(uSubject.getText().toString().trim().getBytes(),secretKey,IV);
+                        cipherSubject = Encrypt.encrypt(uSubject.getText().toString().trim().getBytes(),secretKey);
                         String cipherSub = encoderfun(cipherSubject);
-                        cipherPostcode = Encrypt.encrypt(uPostcode.getText().toString().trim().getBytes(),secretKey,IV);
+                        cipherPostcode = Encrypt.encrypt(uPostcode.getText().toString().trim().getBytes(),secretKey);
                         String cipherPost = encoderfun(cipherPostcode);
 
 
@@ -190,6 +189,7 @@ public class FIR extends AppCompatActivity {
                         user.put("PostCode", cipherPost);
                         user.put("Subject", cipherSub);
                         user.put("Complaint", cipher);
+                        user.put("Key", strSecretKey);
 
 
                         fStore.collection("F.I.R").document(userID).set(user)
@@ -212,7 +212,7 @@ public class FIR extends AppCompatActivity {
 
 
 
-                        Utils.saveData(FIR.this, cipher, strSecretKey, tvIV);
+
 
 
 

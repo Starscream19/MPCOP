@@ -1,5 +1,6 @@
 package com.example.virtualpolicestation;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,7 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
     GridView gridView;
@@ -21,6 +25,37 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         gridView = findViewById(R.id.grid_View);
+
+
+
+
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.custom_toolbar_layout);
+        View view =getSupportActionBar().getCustomView();
+
+        ImageButton logout= (ImageButton)view.findViewById(R.id.logout_icon);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
+            }
+        });
+
+        ImageButton admin= (ImageButton)view.findViewById(R.id.admin_icon);
+
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(),adminValid.class));
+
+
+            }
+        });
 
         MainAdapter adapter = new MainAdapter(HomeActivity.this,services,serviceImage);
         gridView.setAdapter(adapter);
