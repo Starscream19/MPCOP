@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="#CFF4D0"
+    tools:context=".adminsignature">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Provide Your Signature"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+
+        android:textSize="40dp"></TextView>
+
+
+    <com.kyanogen.signatureview.SignatureView
+        xmlns:sign="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/signature_view_admin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1.5"
+        sign:penSize="5dp"
+        sign:backgroundColor="#ffffff"
+        sign:penColor="#000000"
+        sign:enableSignature="true"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_marginTop="30dp">
+
+
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clear2"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:textColor="#ffffff"
+            android:text="clear"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/save2"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:background="@drawable/button"
+            android:text="save"/>
+
+</LinearLayout>
+</LinearLayout>

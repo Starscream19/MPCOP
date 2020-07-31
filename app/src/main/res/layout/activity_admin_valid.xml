@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CFF4D0"
+    tools:context=".adminValid">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/mpp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Login"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal" />
+
+
+
+
+        <EditText
+            android:id="@+id/admin_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:text="admin@mpcop.com"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingTop="50dp"
+            android:paddingRight="20dp" />
+
+        <EditText
+            android:id="@+id/admin_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="enter your password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="50dp"
+            android:paddingRight="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:paddingLeft="20dp"
+                android:paddingRight="5dp"
+                android:text="LOGIN"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
