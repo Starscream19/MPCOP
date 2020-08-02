@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class affidavit extends AppCompatActivity {
     EditText name, FatherNmae,gfather;
     Button affi;
     TextView cont;
+    public static final String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,9 @@ public class affidavit extends AppCompatActivity {
         affi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String time = new SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(System.currentTimeMillis());
+
+                Log.d(TAG, "date"+time);
                 String nam = name.getText().toString();
                 String fname = FatherNmae.getText().toString();
                 String gname =gfather.getText().toString();
@@ -56,6 +61,7 @@ public class affidavit extends AppCompatActivity {
 
 
         String time = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(System.currentTimeMillis());
+
         try {
 
         }catch (Exception e){

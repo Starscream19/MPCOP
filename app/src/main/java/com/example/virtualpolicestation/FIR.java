@@ -3,6 +3,7 @@ package com.example.virtualpolicestation;
 import android.content.Intent;
 
 import android.graphics.Bitmap;
+
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
@@ -24,8 +25,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -34,6 +38,8 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.UUID;
 
 import android.net.Uri;
@@ -44,8 +50,10 @@ import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Nullable;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 
 public class FIR extends AppCompatActivity {
@@ -74,6 +82,7 @@ public class FIR extends AppCompatActivity {
     private FirebaseFirestore fStore;
     String userID;
     public static final String TAG = "TAG";
+    String SignatureUri;
 
 
 
@@ -136,10 +145,31 @@ public class FIR extends AppCompatActivity {
         });
 
 
+        final DocumentReference Dref = fStore.collection("VerificationImage").document("MmuUYq7uV9To6fiP0GCpWqYTCJm1");
+
+        Dref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+
+
+                veri = documentSnapshot.getString("image");
+
+
+
+
+
+
+            }
+        });
+
+
+
 
         Register_FIR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
 
 
 
@@ -200,6 +230,7 @@ public class FIR extends AppCompatActivity {
 
 
 
+
                             Toast.makeText(FIR.this, cipher , Toast.LENGTH_SHORT).show();
 
 
@@ -208,6 +239,7 @@ public class FIR extends AppCompatActivity {
 
 
                             userID = fAuth.getCurrentUser().getUid();
+                            String time = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(System.currentTimeMillis());
 
 
                             Map<String, Object> user = new HashMap<>();
@@ -219,6 +251,8 @@ public class FIR extends AppCompatActivity {
                             user.put("Subject", cipherSub);
                             user.put("Complaint", cipher);
                             user.put("Key", strSecretKey);
+                            user.put("Date", time);
+                            user.put("Signature", temp);
 
 
                             fStore.collection("F.I.R").document(userID).set(user)
@@ -226,7 +260,7 @@ public class FIR extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             Log.d(TAG, "message has een encrypted  " + userID);
-                                            startActivity(new Intent(getApplicationContext(), signature.class));
+                                            startActivity(new Intent(getApplicationContext(), success.class));
 
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
@@ -236,19 +270,6 @@ public class FIR extends AppCompatActivity {
 
                                 }
                             });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -308,9 +329,12 @@ public class FIR extends AppCompatActivity {
             filePath = data.getData();
             Log.d("FilePath ==>", filePath.toString());
 
+            SignatureUri = filePath.toString();
 
 
-            Uri vpath =Uri.parse("content://com.android.providers.media.documents/document/image%3A194083");
+
+
+
 
 
 
@@ -321,28 +345,20 @@ public class FIR extends AppCompatActivity {
 
 
             Bitmap bitmap= null;
-            Bitmap vbitmap = null;
+
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), filePath);
-                vbitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), vpath);
+
 
                 ByteArrayOutputStream baos=new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                ByteArrayOutputStream baos2=new ByteArrayOutputStream();
-                vbitmap.compress(Bitmap.CompressFormat.PNG,100,baos2);
 
-                byte[] a = baos2.toByteArray();
+
+
+
                 byte [] b=baos.toByteArray();
 
                  temp= Base64.encodeToString(b, Base64.DEFAULT);
-
-                 veri = Base64.encodeToString(a, Base64.DEFAULT);
-
-
-
-
-
-
 
 
 

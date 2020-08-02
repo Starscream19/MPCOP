@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -31,8 +32,10 @@ public class officialfir extends AppCompatActivity {
 
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
-    String userID,odecryptedName,odecryptedAddress,odecryptedPost,odecryptedCity,odecryptedSubject,odecryptedComp,signatureUser1,signatureAdmin;
+    String userID,odecryptedName,odecryptedAddress,odecryptedPost,odecryptedCity,odecryptedSubject,odecryptedComp,signatureUser1,signatureAdmin,decryptUserSig,decryptShoSig;
     public static final String TAG = "TAG";
+
+    Uri useruri,shouri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,15 +121,16 @@ public class officialfir extends AppCompatActivity {
                 Osubject.setText(odecryptedSubject);
 
                 signatureUser1 =documentSnapshot.getString("Signature");
-
                 byte[] image = Base64.decode(signatureUser1, Base64.DEFAULT);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
+
                 sign.setImageBitmap(bitmap);
 
 
-                signatureAdmin = documentSnapshot.getString("AdminSignature");
+                signatureAdmin = documentSnapshot.getString("SHO Signature");
                 byte[] image2 =  Base64.decode(signatureAdmin, Base64.DEFAULT);
                 Bitmap bitmap2 = BitmapFactory.decodeByteArray(image2, 0, image2.length);
+
                 sign2.setImageBitmap(bitmap2);
 
 
