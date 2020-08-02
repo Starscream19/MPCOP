@@ -16,15 +16,29 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomeActivity extends AppCompatActivity {
     GridView gridView;
     String[] services = {"Register E-FIR","View FIR","Report Lost Article","Know Police Station"
-    ,"Accident Alert Area","Stolen/Recovered Vehicle","Character Certificate","Domestic Help",
+    ,"Affidavit","Stolen/Recovered Vehicle","Character Certificate","Domestic Help",
     "Employee Verification"};
     int[] serviceImage ={R.drawable.images,R.drawable.view_fir,R.drawable.lost_art,R.drawable.location,
     R.drawable.accident,R.drawable.stolen,R.drawable.certificate,R.drawable.help,R.drawable.verification};
+
+
+    private FirebaseAuth fAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         gridView = findViewById(R.id.grid_View);
+
+
+        fAuth = FirebaseAuth.getInstance();
+
+
+//        if(fAuth.getCurrentUser() != null){
+//            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+//            finish();
+//        }
 
 
 
@@ -78,7 +92,7 @@ public class HomeActivity extends AppCompatActivity {
                     myIntent = new Intent(view.getContext(), Know_police_station.class);
                 }
                 if(position==4){
-                    myIntent = new Intent(view.getContext(), FIR.class);
+                    myIntent = new Intent(view.getContext(), affidavit.class);
                 }
                 if(position==5){
                     myIntent = new Intent(view.getContext(), Stolen_Recovered_vehicle.class);

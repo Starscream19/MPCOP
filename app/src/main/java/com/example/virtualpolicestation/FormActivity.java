@@ -83,7 +83,7 @@ public class FormActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),FIR.class));
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             finish();
         }
 
@@ -99,7 +99,9 @@ public class FormActivity extends AppCompatActivity {
 
                         String phoneNum = "+91" + mPhone.getText().toString();
                         Log.d("phone", "Phone No.: " + phoneNum);
+
                         requestPhoneAuth(phoneNum);
+                        Toast.makeText(FormActivity.this, "Please Wait for OTP" , Toast.LENGTH_SHORT).show();
                     }else {
                         next.setEnabled(false);
 
@@ -208,6 +210,7 @@ public class FormActivity extends AppCompatActivity {
                         next.setText("Verify");
                         next.setEnabled(true);
                         optEnter.setVisibility(View.VISIBLE);
+
                     }
 
                     @Override
@@ -216,11 +219,7 @@ public class FormActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
+                        Toast.makeText(FormActivity.this, "Phone Number automatically verified" , Toast.LENGTH_SHORT).show();
 
 
 

@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CustomTheme">
-        <activity android:name=".officialfir"></activity>
+        <activity android:name=".affidavit"></activity>
+        <activity android:name=".officialfir" />
         <activity android:name=".adminsignature" />
         <activity android:name=".currentuserfir" />
         <activity android:name=".adminview" />
