@@ -22,6 +22,8 @@
     </TextView>
 
 
+
+
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -29,6 +31,7 @@
         android:paddingBottom="10dp"
         android:layout_below="@+id/heading"
         android:paddingTop="10dp"
+        android:orientation="vertical"
         android:layout_marginTop="10dp">
 
         <TextView
@@ -37,12 +40,43 @@
             android:text="subject"
             android:textAlignment="center"
             android:textColor="#000000"
+            android:layout_gravity="fill_vertical"
             android:layout_marginTop="20dp"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:textSize="20dp"
+            android:clickable="true"
+            android:id="@+id/subject1"
+            tools:ignore="RtlCompat" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="subject"
+
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"
             android:textSize="20dp"
             android:clickable="true"
 
 
-            android:id="@+id/subject1"/>
+            android:id="@+id/subject2"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="subject"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:layout_marginTop="30dp"
+            android:textSize="20dp"
+            android:clickable="true"
+
+
+            android:id="@+id/subject3"/>
 
 
 

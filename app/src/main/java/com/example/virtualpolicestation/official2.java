@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -24,7 +23,8 @@ import javax.annotation.Nullable;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-public class officialfir extends AppCompatActivity {
+public class official2 extends AppCompatActivity {
+
 
     TextView Ousername,Oaddress,Opostcode,Ocity,Osubject,Ocompliant;
     ImageView sign,sign2;
@@ -35,32 +35,29 @@ public class officialfir extends AppCompatActivity {
     String userID,odecryptedName,odecryptedAddress,odecryptedPost,odecryptedCity,odecryptedSubject,odecryptedComp,signatureUser1,signatureAdmin,decryptUserSig,decryptShoSig;
     public static final String TAG = "TAG";
 
-    Uri useruri,shouri;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        setContentView(R.layout.activity_official2);
 
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
-        setContentView(R.layout.activity_officialfir);
 
 
 
 
-        Ousername = findViewById(R.id.Off_name);
-        Oaddress = findViewById(R.id.Off_address);
-        Opostcode = findViewById(R.id.Off_postcode);
-        Ocity = findViewById(R.id.Off_city);
-        Osubject = findViewById(R.id.Off_subject);
-        Ocompliant = findViewById(R.id.Off_complaint);
-        sign = findViewById(R.id.Off_signature);
-        sign2 = findViewById(R.id.fir_adminsignature);
-        home = (Button) findViewById(R.id.adminhome);
+
+        Ousername = findViewById(R.id.u2_Off_name);
+        Oaddress = findViewById(R.id.u2_Off_address);
+        Opostcode = findViewById(R.id.u2_Off_postcode);
+        Ocity = findViewById(R.id.u2_Off_city);
+        Osubject = findViewById(R.id.u2_Off_subject);
+        Ocompliant = findViewById(R.id.u2_Off_complaint);
+        sign = findViewById(R.id.u2_Off_signature);
+        sign2 = findViewById(R.id.u2_fir_adminsignature);
+        home = (Button) findViewById(R.id.u2_adminhome);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +68,7 @@ public class officialfir extends AppCompatActivity {
 
 
 
-        final DocumentReference Dref = fStore.collection("F.I.R").document(userID);
+        final DocumentReference Dref = fStore.collection("F.I.R").document("HQhJIY2wBherEvnUUq3GTkhliW02");
         Dref.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -136,10 +133,6 @@ public class officialfir extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
 
     public static byte[] decoderfun(String enval) {

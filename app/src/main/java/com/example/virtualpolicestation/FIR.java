@@ -106,7 +106,7 @@ public class FIR extends AppCompatActivity {
 
         uFullName   = findViewById(R.id.Full_name);
         uAddress   = findViewById(R.id.address);
-        uCity    = findViewById(R.id.address);
+        uCity    = findViewById(R.id.city);
 
         uPostcode  = findViewById(R.id.postcode);
         uSubject   = findViewById(R.id.subject);
@@ -253,6 +253,7 @@ public class FIR extends AppCompatActivity {
                             user.put("Key", strSecretKey);
                             user.put("Date", time);
                             user.put("Signature", temp);
+                            user.put("Status" , "Pending");
 
 
                             fStore.collection("F.I.R").document(userID).set(user)

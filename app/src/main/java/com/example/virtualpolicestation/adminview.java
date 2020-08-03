@@ -21,12 +21,12 @@ import javax.crypto.spec.SecretKeySpec;
 
 public class adminview extends AppCompatActivity {
 
-    TextView sub1;
+    TextView sub1,sub2,sub3;
 
 
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
-    String userID,decryptedText;
+    String userID,decryptedText,status;
     public static final String TAG = "TAG";
 
 
@@ -44,6 +44,8 @@ public class adminview extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
         sub1 = findViewById(R.id.subject1);
+        sub2 = findViewById(R.id.subject2);
+        sub3 = findViewById(R.id.subject3);
 
 
         final DocumentReference Dref = fStore.collection("F.I.R").document(userID);
@@ -56,12 +58,57 @@ public class adminview extends AppCompatActivity {
                 byte[] encText = decoderfun(StrEncText);
                 String key = documentSnapshot.getString("Key");
                 byte[] encodedSecretKey = decoderfun(key);
+                String status = documentSnapshot.getString("Status");
+                String date = documentSnapshot.getString("Date");
 
                 SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
 
                 decryptedText = Decrypt.decrypt(encText, (SecretKeySpec) originalSecretKey);
 
-                sub1.setText("F.I.R Subject- " +decryptedText);
+                sub1.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status);
+            }
+        });
+
+        final DocumentReference Dref2 = fStore.collection("F.I.R").document("HQhJIY2wBherEvnUUq3GTkhliW02");
+        Dref2.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+
+
+                String StrEncText = documentSnapshot.getString("Subject");
+                byte[] encText = decoderfun(StrEncText);
+                String key = documentSnapshot.getString("Key");
+                byte[] encodedSecretKey = decoderfun(key);
+                String status = documentSnapshot.getString("Status");
+                String date = documentSnapshot.getString("Date");
+
+                SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
+
+                decryptedText = Decrypt.decrypt(encText, (SecretKeySpec) originalSecretKey);
+
+                sub2.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status);
+            }
+        });
+
+
+        final DocumentReference Dref3 = fStore.collection("F.I.R").document("aISNZMFbqVYS9ALmxdOUla3CKav1");
+        Dref3.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+
+
+                String StrEncText = documentSnapshot.getString("Subject");
+                byte[] encText = decoderfun(StrEncText);
+                String key = documentSnapshot.getString("Key");
+                byte[] encodedSecretKey = decoderfun(key);
+                status = documentSnapshot.getString("Status");
+                String date = documentSnapshot.getString("Date");
+
+                SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
+
+                decryptedText = Decrypt.decrypt(encText, (SecretKeySpec) originalSecretKey);
+
+                sub3.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status);
             }
         });
 
@@ -71,8 +118,35 @@ public class adminview extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(getApplicationContext(),currentuserfir.class));
+                if (status.equals("Verified")){
 
+                    startActivity(new Intent(getApplicationContext(),officialfir.class));
+
+                }
+                if (status.equals("Pending")){
+
+                    startActivity(new Intent(getApplicationContext(),currentuserfir.class));
+
+                }
+
+
+            }
+        });
+        sub2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                startActivity(new Intent(getApplicationContext(),official2.class));
+
+            }
+        });
+
+        sub3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),official3.class));
             }
         });
 

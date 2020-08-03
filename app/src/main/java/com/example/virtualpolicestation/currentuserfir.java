@@ -205,6 +205,7 @@ public class currentuserfir extends AppCompatActivity {
                 shosiguri = Base64.encodeToString(b, Base64.DEFAULT);
                 Map<String, Object> user = new HashMap<>();
                 user.put("SHO Signature", shosiguri);
+                user.put("Status", "Verified");
 
 
                 fStore.collection("F.I.R").document(userID).set(user, SetOptions.merge())
