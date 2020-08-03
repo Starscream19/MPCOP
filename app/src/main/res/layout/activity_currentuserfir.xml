@@ -232,13 +232,14 @@
                     android:layout_marginRight="10dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="fill_vertical"
+                    android:textAlignment="center"
                     android:ems="10"
                     android:layout_marginLeft="10dp"
                     android:inputType="textMultiLine"
                     android:maxLines="10"
                     android:hint=" Complaint"
                     android:textSize="20sp"
-                    />
+                    tools:ignore="RtlCompat" />
 
 
 

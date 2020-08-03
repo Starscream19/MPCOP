@@ -26,7 +26,7 @@ public class adminview extends AppCompatActivity {
 
     private FirebaseAuth fAuth;
     private FirebaseFirestore fStore;
-    String userID,decryptedText,status;
+    String userID,decryptedText,status,status2,status3;
     public static final String TAG = "TAG";
 
 
@@ -58,7 +58,7 @@ public class adminview extends AppCompatActivity {
                 byte[] encText = decoderfun(StrEncText);
                 String key = documentSnapshot.getString("Key");
                 byte[] encodedSecretKey = decoderfun(key);
-                String status = documentSnapshot.getString("Status");
+                status = documentSnapshot.getString("Status");
                 String date = documentSnapshot.getString("Date");
 
                 SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
@@ -79,14 +79,14 @@ public class adminview extends AppCompatActivity {
                 byte[] encText = decoderfun(StrEncText);
                 String key = documentSnapshot.getString("Key");
                 byte[] encodedSecretKey = decoderfun(key);
-                String status = documentSnapshot.getString("Status");
+                status2 = documentSnapshot.getString("Status");
                 String date = documentSnapshot.getString("Date");
 
                 SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
 
                 decryptedText = Decrypt.decrypt(encText, (SecretKeySpec) originalSecretKey);
 
-                sub2.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status);
+                sub2.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status2);
             }
         });
 
@@ -101,14 +101,14 @@ public class adminview extends AppCompatActivity {
                 byte[] encText = decoderfun(StrEncText);
                 String key = documentSnapshot.getString("Key");
                 byte[] encodedSecretKey = decoderfun(key);
-                status = documentSnapshot.getString("Status");
+                status3 = documentSnapshot.getString("Status");
                 String date = documentSnapshot.getString("Date");
 
                 SecretKey originalSecretKey = new SecretKeySpec(encodedSecretKey, 0, encodedSecretKey.length, "AES");
 
                 decryptedText = Decrypt.decrypt(encText, (SecretKeySpec) originalSecretKey);
 
-                sub3.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status);
+                sub3.setText("F.I.R Subject- " +decryptedText + "\n Date of File- " + date + "\n Status- " + status3);
             }
         });
 
